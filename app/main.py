@@ -59,3 +59,13 @@ def root():
 @app.get("/health", tags=["Health"])
 def health():
     return {"status": "healthy"}
+
+import subprocess
+import threading
+
+def start_celery():
+    subprocess.Popen(
+        ["celery", "-A", "app.celery_worker", "worker", "--loglevel=info", "--pool=solo"]
+    )
+
+threading.Thread(target=start_celery, daemon=True).start()
