@@ -2,7 +2,8 @@ import logging
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
-
+from pathlib import Path
+Path("uploaded_resumes").mkdir(exist_ok=True)
 from app.database import Base, engine
 from app import models  # ⭐ ensures models are registered
 from app.routers import auth_router, job_router, candidate_router, admin_router
