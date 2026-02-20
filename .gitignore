@@ -1,0 +1,19 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Env
+.env
+
+# Uploads
+uploaded_resumes/
+
+# Celery temp
+tmp_resumes/
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
